@@ -16,3 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('members', 'MemberController@index');
+
+Route::get('home', 'MemberController@index');
+ 
+Route::get('members', 'MemberController@index');
+ 
+
+Route::get('more/{id}', 'MemberController@show');

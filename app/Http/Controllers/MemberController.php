@@ -51,7 +51,11 @@ class MemberController extends Controller
      */
     public function show($id)
     {
-        //
+         // find the member of given id
+        $member = Member::find($id);
+      
+       // show the view and pass the member info to it
+        return View ('member')->with('member',$member); 
     }
 
     /**
