@@ -16,7 +16,7 @@
 </div>
 &nbsp;
 <div class="panel-body">
-<div class="table-responsive">Email Address Phone Number More Info @foreach($members as $key => $member) {!! $member->name !!}{!! $member->email !!}{!! $member->phone !!} <a class="btn btn-large btn-info" href="{!! URL::to('more/' . $member->id) !!}">View more info</a>   @endforeach
+<div class="table-responsive">Email Address Phone Number More Info
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
@@ -24,8 +24,15 @@
 </tr>
 </thead>
 <tbody>
+ @foreach($members as $key => $member) 
+<td>{{ $member->name }}</td>
+<td>{{ $member->email }}</td>
+<td>{{ $member->phone }} </td>
+<td><a class="btn btn-large btn-info" href="{!! URL::to('more/' . $member->id) !!}">View more info</a></td>
+</td>
+@endforeach
 <tr>
-<td>{!! $member->name !!}</td>
+
 </tr>
 </tbody>
 </table>
