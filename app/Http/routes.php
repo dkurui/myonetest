@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('master');
-});
+Route::get('/', 'MemberController@index');
 
 Route::get('members', 'MemberController@index');
 
@@ -23,3 +21,15 @@ Route::get('members', 'MemberController@index');
  
 
 Route::get('more/{id}', 'MemberController@show');
+
+Route::get('new', 'MemberController@create');
+
+Route::post('data', 'MemberController@store');
+ 
+Route::get('edit', 'MemberController@viewEdit');
+
+Route::get('edit/{id}', 'MemberController@edit');
+
+Route::post('save-updates/{id}', 'MemberController@update');
+
+Route::get('delete/{id}', 'MemberController@destroy');
